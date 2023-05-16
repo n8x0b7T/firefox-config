@@ -3,13 +3,15 @@ if [ ! -f "/usr/bin/firefox" ]; then
     exit
 fi
 
-if [ ! -f "/usr/lib/firefox/" ]; then
+if [ ! -d "/usr/lib/firefox" ]; then
     echo "Can not find firefox directory"
     exit
 fi
 
 mkdir -p /usr/lib/firefox/defaults/pref
-wget -O -P /usr/lib/firefox/defaults/pref "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/autoconfig.js" 
+curl "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/autoconfig.js" > /usr/lib/firefox/defaults/pref/autoconfig.js
 
-wget -O -P /usr/lib/firefox/ "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/mozilla.cfg" 
+curl "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/firefox.cfg" > /usr/lib/firefox/firefox.cfg
+
+
 ls /usr/lib/firefox/
