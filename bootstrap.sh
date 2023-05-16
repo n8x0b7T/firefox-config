@@ -13,5 +13,6 @@ curl "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/autoconfi
 
 curl "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/firefox.cfg" > /usr/lib/firefox/firefox.cfg
 
+curl "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/policies.json" > /usr/lib/firefox/distribution/policies.json
 
 ls /usr/lib/firefox/
