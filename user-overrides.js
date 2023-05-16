@@ -1,6 +1,6 @@
 
 // disable ff sync
-defaultPref("identity.fxaccounts.enabled", false);
+lockPref("identity.fxaccounts.enabled", false);
 
 defaultPref("browser.shell.checkDefaultBrowser", false);
 
