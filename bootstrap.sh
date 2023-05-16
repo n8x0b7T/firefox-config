@@ -8,14 +8,15 @@ if [ ! -d "/usr/lib/firefox" ]; then
     exit
 fi
 
-if [ -z "$1" ] || [ ! -d "$1" ]; then
+if [ -z "$1" ] || [ ! -f "$1/prefs.js" ]; then
     echo "Please suply a valid firefox profile directory as the first positional argument"
     exit
 fi
 
+killall firefox 
 
+curl "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/user-overrides.js" > "$1/user-overrides.js"
 
-exit
 
 mkdir -p /usr/lib/firefox/defaults/pref
 curl "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/autoconfig.js" > /usr/lib/firefox/defaults/pref/autoconfig.js
