@@ -1,117 +1,16 @@
 
-// disable ff sync
-lockPref("identity.fxaccounts.enabled", false);
-
-defaultPref("browser.shell.checkDefaultBrowser", false);
-
-// disable safe browsing
-defaultPref("browser.safebrowsing.malware.enabled", false);
-defaultPref("browser.safebrowsing.phishing.enabled", false);
-defaultPref("browser.safebrowsing.blockedURIs.enabled", false);
-defaultPref("browser.safebrowsing.provider.google4.gethashURL", "");
-defaultPref("browser.safebrowsing.provider.google4.updateURL", "");
-defaultPref("browser.safebrowsing.provider.google.gethashURL", "");
-defaultPref("browser.safebrowsing.provider.google.updateURL", "");
-defaultPref("browser.safebrowsing.downloads.enabled", false);
-pref("browser.safebrowsing.downloads.remote.enabled", false);
-pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false);
-pref("browser.safebrowsing.downloads.remote.block_uncommon", false);
-pref("browser.safebrowsing.downloads.remote.url", "");
-pref("browser.safebrowsing.provider.google4.dataSharingURL", "");
-
-
 
 // enable scrolling with middle mouse click
 user_pref("general.autoScroll", true);
 
 
-defaultPref("browser.startup.homepage_override.mstone", "ignore");
-defaultPref("startup.homepage_override_url", "about:blank");
-defaultPref("startup.homepage_welcome_url", "about:blank");
-defaultPref("startup.homepage_welcome_url.additional", "");
-lockPref("browser.messaging-system.whatsNewPanel.enabled", false);
-lockPref("browser.uitour.enabled", false);
-lockPref("browser.uitour.url", "");
-defaultPref("browser.shell.checkDefaultBrowser", false);
-
 // disable search suggestions
 user_pref("browser.search.update", false);
 user_pref("browser.urlbar.quicksuggest.enabled", false);
 
-// disable save password prompt
-defaultPref("signon.rememberSignons", false);
-defaultPref("signon.autofillForms", false);
-defaultPref("extensions.formautofill.addresses.enabled", false);
-defaultPref("extensions.formautofill.creditCards.enabled", false);
-defaultPref("signon.formlessCapture.enabled", false);
-
-// hide telementry settings from UI
-lockPref("toolkit.telemetry.unified", false); // master switch
-lockPref("toolkit.telemetry.enabled", false);  // master switch
-lockPref("toolkit.telemetry.server", "data:,");
-lockPref("toolkit.telemetry.archive.enabled", false);
-lockPref("toolkit.telemetry.newProfilePing.enabled", false);
-lockPref("toolkit.telemetry.updatePing.enabled", false);
-lockPref("toolkit.telemetry.firstShutdownPing.enabled", false);
-lockPref("toolkit.telemetry.shutdownPingSender.enabled", false);
-lockPref("toolkit.telemetry.bhrPing.enabled", false);
-lockPref("toolkit.telemetry.cachedClientID", "");
-lockPref("toolkit.telemetry.previousBuildID", "");
-lockPref("toolkit.telemetry.server_owner", "");
-lockPref("toolkit.coverage.opt-out", true); // hidden
-lockPref("toolkit.telemetry.coverage.opt-out", true); // hidden
-lockPref("toolkit.coverage.enabled", false);
-lockPref("toolkit.coverage.endpoint.base", "");
-lockPref("toolkit.crashreporter.infoURL", "");
-lockPref("datareporting.healthreport.uploadEnabled", false);
-lockPref("datareporting.policy.dataSubmissionEnabled", false);
-lockPref("security.protectionspopup.recordEventTelemetry", false);
-lockPref("browser.ping-centre.telemetry", false);
-// opt-out of normandy and studies
-lockPref("app.normandy.enabled", false);
-lockPref("app.normandy.api_url", "");
-lockPref("app.shield.optoutstudies.enabled", false);
-// disable personalized extension recommendations
-lockPref("browser.discovery.enabled", false);
-lockPref("browser.discovery.containers.enabled", false);
-lockPref("browser.discovery.sites", "");
-// disable crash report
-lockPref("browser.tabs.crashReporting.sendReport", false);
-lockPref("breakpad.reportURL", "");
 
 
-pref("browser.translation.engine", ""); // remove translation engine
-pref("webchannel.allowObject.urlWhitelist", ""); // remove web channel whitelist
-defaultPref("services.settings.server", "https://%.invalid") // set the remote settings URL (REMOTE_SETTINGS_SERVER_URL in the code)
-
-// remove anoying UI elements
-defaultPref("browser.contentblocking.report.lockwise.enabled", false);
-lockPref("browser.contentblocking.report.hide_vpn_banner", true);
-lockPref("browser.contentblocking.report.vpn.enabled", false);
-lockPref("browser.contentblocking.report.show_mobile_app", false);
-lockPref("browser.vpn_promo.enabled", false);
-lockPref("browser.promo.focus.enabled", false);
-lockPref(browser.newtabpage.activity-stream.feeds.snippets, false)
-// ...about:addons recommendations sections and more
-defaultPref("extensions.htmlaboutaddons.recommendations.enabled", false);
-defaultPref("extensions.getAddons.showPane", false);
-defaultPref("extensions.getAddons.cache.enabled", false); // disable fetching of extension metadata
-defaultPref("lightweightThemes.getMoreURL", ""); // disable button to get more themes
-// ...about:preferences#home
-defaultPref("browser.topsites.useRemoteSetting", false); // hide sponsored shortcuts button
-// ...and about:config
-defaultPref("browser.aboutConfig.showWarning", false);
-// hide about:preferences#moreFromMozilla
-defaultPref("browser.preferences.moreFromMozilla", false);
-
-// disable Pocket
-lockPref(extensions.pocket.enabled, false)
-
-// disable some more UI elements
-lockPref("browser.newtabpage.activity-stream.feeds.section.topstories.options", "{\"hidden\":true}");
-lockPref("browser.newtabpage.activity-stream.default.sites", "");
-lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-lockPref("browser.newtabpage.activity-stream.showSponsored", false);
-lockPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
-
+// load in cfg file for locking prefs
+pref("general.config.filename", "mozilla.cfg");
+lockPref("general.config.obscure_value", 0);
 
