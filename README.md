@@ -5,7 +5,7 @@
 ## Instalation
 - Install firefox
 ```
-curl -s "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/bootstrap.sh" | bash
+curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/bootstrap.sh" | bash
 ```
 - Firefox will open once to generate a baseline profile. Just close it.
 - Make sure to set default search engine

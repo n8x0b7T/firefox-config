@@ -26,9 +26,9 @@ fi
 
 echo "Changing global configs"
 "$sudo" mkdir -p /usr/lib/firefox/defaults/pref
-"$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/autoconfig.js" > /usr/lib/firefox/defaults/pref/autoconfig.js'
-"$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/firefox.cfg" > /usr/lib/firefox/firefox.cfg'
-"$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/policies.json" > /usr/lib/firefox/distribution/policies.json'
+"$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/autoconfig.js" > /usr/lib/firefox/defaults/pref/autoconfig.js'
+"$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/firefox.cfg" > /usr/lib/firefox/firefox.cfg'
+"$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/policies.json" > /usr/lib/firefox/distribution/policies.json'
 
 killall firefox
 rm -r ~/.mozilla
@@ -41,7 +41,7 @@ profile_dir=(~/.mozilla/firefox/*.default-release)
 echo "Your profile is $profile_dir"
 
 echo -e " \n\n\nChanging user profile"
-curl -s "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/user-overrides.js" > "$profile_dir/user-overrides.js"
+curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/user-overrides.js" > "$profile_dir/user-overrides.js"
 curl -s "https://raw.githubusercontent.com/arkenfox/user.js/master/updater.sh" | bash -s -- -p "$profile_dir" -s
 
 
