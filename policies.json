@@ -28,6 +28,7 @@
                     "adminSettings": {
                         "userSettings": {
                           "advancedUserEnabled": true,
+                          "uiTheme": "dark",
                           "externalLists": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
                           "importedLists": [
                             "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
