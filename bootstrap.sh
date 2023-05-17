@@ -35,6 +35,7 @@ rm -r ~/.mozilla
 firefox 2>/dev/null & command_pid=$!
 
 # Wait for the command to exit
+echo "Please close firefox after it opens"
 wait "$command_pid"
 
 profile_dir=(~/.mozilla/firefox/*.default-release)
