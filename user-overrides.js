@@ -28,9 +28,7 @@ user_pref("browser.tabs.firefox-view", false);
 user_pref("browser.startup.blankWindow", false);
 
 user_pref("browser.startup.homepage", "about:home");
-/* 0104: set NEWTAB page
- * true=Firefox Home (default, see 0105), false=blank page
- * [SETTING] Home>New Windows and Tabs>New tabs ***/
+user_pref("browser.startup.page", 1);
 user_pref("browser.newtabpage.enabled", true);
 user_pref("browser.newtabpage.activity-stream.showSearch", false);
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
