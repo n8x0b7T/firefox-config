@@ -32,7 +32,7 @@ echo "Changing global configs"
 
 killall firefox
 rm -r ~/.mozilla
-firefox & command_pid=$!
+firefox 2>/dev/null & command_pid=$!
 
 # Wait for the command to exit
 wait "$command_pid"
