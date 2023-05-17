@@ -17,5 +17,8 @@ lockPref("general.config.obscure_value", 0);
 user_pref("privacy.clearOnShutdown.history", false);
 user_pref("privacy.clearOnShutdown.downloads", false);
 
-// search from the URL bar
+// search from the URL bar, but no search suggestions
 user_pref("keyword.enabled", true);
+user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.search.update", false);
