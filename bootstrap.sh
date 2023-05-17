@@ -34,9 +34,10 @@ rm -r ~/.mozilla
 firefox 2>/dev/null & command_pid=$!
 
 # Wait for the command to exit
-echo "Please close firefox after it opens"
+echo "Please close firefox after it opens and installs the extensions"
 wait "$command_pid"
 
+# remove the file so the users can change settings after the fact
 "$sudo" rm /usr/lib/firefox/distribution/policies.json
 
 profile_dir=(~/.mozilla/firefox/*.default-release)
