@@ -48,4 +48,4 @@ curl -s "https://raw.githubusercontent.com/arkenfox/user.js/master/updater.sh" |
 echo "Done."
 
 # open links for extenstions
-nohup firefox "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/" "https://addons.mozilla.org/en-US/firefox/addon/darkreader/" "https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/" "https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/" >/dev/null 2>&1 &
+nohup firefox "https://addons.mozilla.org/en-US/firefox/addon/matte-black-v1/" "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/" "https://addons.mozilla.org/en-US/firefox/addon/darkreader/" "https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/" "https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/" >/dev/null 2>&1 &
