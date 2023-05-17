@@ -1,5 +1,4 @@
 
-
 // enable scrolling with middle mouse click
 user_pref("general.autoScroll", true);
 

@@ -23,7 +23,6 @@ fi
 # fi
 
 
-
 echo "Changing global configs"
 "$sudo" mkdir -p /usr/lib/firefox/defaults/pref
 "$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/autoconfig.js" > /usr/lib/firefox/defaults/pref/autoconfig.js'
