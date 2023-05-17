@@ -35,3 +35,6 @@ user_pref("privacy.resistFingerprinting.letterboxing", false);
 
 // disable resist fingerprinting in favor of canvas blocker
 user_pref("privacy.resistFingerprinting", false);
+
+// allow extensions to work on mozilla websites
+user_pref("extensions.webextensions.restrictedDomains", "");
