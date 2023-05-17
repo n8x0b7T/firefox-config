@@ -31,7 +31,10 @@ echo "Changing global configs"
 "$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/user-overrides.js/main/policies.json" > /usr/lib/firefox/distribution/policies.json'
 
 rm -r ~/.mozilla
-firefox
+firefox & command_pid=$!
+
+# Wait for the command to exit
+wait "$command_pid"
 
 profile_dir=(~/.mozilla/firefox/*.default-release)
 echo "Your profile is $profile_dir"
