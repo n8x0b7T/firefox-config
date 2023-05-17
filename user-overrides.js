@@ -14,3 +14,8 @@ user_pref("browser.urlbar.quicksuggest.enabled", false);
 pref("general.config.filename", "mozilla.cfg");
 lockPref("general.config.obscure_value", 0);
 
+user_pref("privacy.clearOnShutdown.history", false);
+user_pref("privacy.clearOnShutdown.downloads", false);
+
+// search from the URL bar
+user_pref("keyword.enabled", true);
