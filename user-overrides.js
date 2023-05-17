@@ -30,3 +30,6 @@ user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 
 // dark mode for built-in pdf reader
 user_pref("pdfjs.viewerCssTheme", 2);
+
+// disable letterboxing
+user_pref("privacy.resistFingerprinting.letterboxing", false);
