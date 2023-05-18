@@ -56,7 +56,7 @@ fi
 
 profile_dir=(~/.mozilla/firefox/*.default-release)
 echo -e "\nYour profile is $profile_dir"
-read -p "Do you want to continue? (Y/n): " choice
+read -p "Do you want to continue? (Y/n): " choice </dev/tty
 
 if [[ "$choice" == "n" || "$choice" == "N" ]]; then
     echo "Ok, fine."
