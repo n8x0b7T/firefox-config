@@ -17,3 +17,7 @@ This mode will not configure extensions or remove the existing Firefox profile
 ```
 curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/bootstrap.sh" | bash -s -- -u
 ```
+## Gesture Support for GNOME on Wayland
+```
+sudo curl -s https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/firefox.desktop > /usr/share/applications/firefox.desktop
+```
