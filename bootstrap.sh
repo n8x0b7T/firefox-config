@@ -1,3 +1,17 @@
+#!/bin/bash
+
+
+update=false
+
+for arg in "$@"; do
+  if [[ "$arg" == "-u" ]]; then
+    update=true
+    break
+  fi
+done
+
+
+# use correct command
 if command -v doas >/dev/null 2>&1; then
     sudo="doas"
 elif command -v sudo >/dev/null 2>&1; then
@@ -9,12 +23,12 @@ fi
 
 if [ ! -f "/usr/bin/firefox" ]; then
     echo "Please install firefox"
-    exit
+    exit 1
 fi
 
 if [ ! -d "/usr/lib/firefox" ]; then
     echo "Can not find firefox directory"
-    exit
+    exit 1
 fi
 
 # if [ -z "$1" ] || [ ! -f "$1/prefs.js" ]; then
@@ -22,34 +36,44 @@ fi
 #     exit
 # fi
 
+killall firefox 2> /dev/null
 
 echo "Changing global configs"
 "$sudo" mkdir -p /usr/lib/firefox/defaults/pref
 "$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/autoconfig.js" > /usr/lib/firefox/defaults/pref/autoconfig.js'
 "$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/firefox.cfg" > /usr/lib/firefox/firefox.cfg'
-"$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/policies.json" > /usr/lib/firefox/distribution/policies.json'
+if ! $update; then
+    "$sudo" bash -c 'curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/policies.json" > /usr/lib/firefox/distribution/policies.json'
+    rm -r ~/.mozilla
+    firefox 2>/dev/null & command_pid=$!
 
-killall firefox
-rm -r ~/.mozilla
-firefox 2>/dev/null & command_pid=$!
-
-# Wait for the command to exit
-echo "Please close firefox after it opens and installs the extensions"
-wait "$command_pid"
-
-# remove the file so the users can change settings after the fact
-"$sudo" rm /usr/lib/firefox/distribution/policies.json
+    # Wait for the command to exit
+    echo "Please close firefox after it opens and installs the extensions"
+    wait "$command_pid"
+    # remove the file so the users can change settings after the fact
+    "$sudo" rm /usr/lib/firefox/distribution/policies.json
+fi
 
 profile_dir=(~/.mozilla/firefox/*.default-release)
-echo "Your profile is $profile_dir"
+echo -e "\nYour profile is $profile_dir"
+read -p "Do you want to continue? (Y/n): " choice
 
-echo -e " \n\n\nChanging user profile"
+if [[ "$choice" == "n" || "$choice" == "N" ]]; then
+    echo "Ok, fine."
+    exit
+fi
+
+echo -e "\nChanging user profile"
+# remove user.js if it exists
+rm "$profile_dir/user.js" 2> /dev/null
+# setup custom settings
 curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/user-overrides.js" > "$profile_dir/user-overrides.js"
+# get fresh copy of user.sh
 curl -s "https://raw.githubusercontent.com/arkenfox/user.js/master/updater.sh" | bash -s -- -p "$profile_dir" -s
 
 
 echo "Done."
-echo "Don't forget to adjust your search engine!"
+echo "Don't forget to set your search engine!"
 
 # open preferences
 nohup firefox --preferences >/dev/null 2>&1 &
