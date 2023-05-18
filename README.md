@@ -1,8 +1,9 @@
 # Firefox Config
 
-*WARNING: this repo will erase all exising Firefox data*
+
 
 ## Instalation
+*WARNING: this will erase all exising Firefox data*
 - Install firefox
 ```
 curl -s "https://raw.githubusercontent.com/n8x0b7T/firefox-config/main/bootstrap.sh" | bash
