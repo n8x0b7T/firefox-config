@@ -1,0 +1,28 @@
+@-moz-document unobservable-document() {
+  :root {
+    color-scheme: unset !important;
+    background: #141414 !important;
+    --in-content-page-background: #121212; 
+    --toolbar-bg-color: #282828 !important;
+    color: white !important;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :host, :root {
+    --in-content-page-background: rgb(20, 20, 20) !important;
+    --in-content-box-background: rgb(28, 28, 28) !important;
+  }
+}
+
+@-moz-document url-prefix("about:") {
+    body{
+      background-color: #141414 !important;
+      color: white !important;
+      --surface-1: #141414 !important;
+      --cm-gutter-surface: #181818 !important;
+      --popup-toolbar-surface: #222 !important;
+      --popup-cell-surface: #222 !important;
+      --popup-ruleset-tool-surface-hover: #222 !important;
+      --popup-ruleset-tool-surface: #222 !important;
+ }
+}
