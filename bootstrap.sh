@@ -54,9 +54,10 @@ if ! $update; then
     "$sudo" rm /usr/lib/firefox/distribution/policies.json
 fi
 
-profile_expansion=(~/.mozilla/firefox/*.default-release)
-profile_dir=${profile_expansion[1]}
+eval profile_expansion=(~/.mozilla/firefox/*.default-release)
+profile_dir=${profile_expansion[0]}
 echo -e "\nYour profile is $profile_dir"
+
 read -rp "Do you want to continue? (Y/n): " choice </dev/tty
 
 if [[ "$choice" == "n" || "$choice" == "N" ]]; then
