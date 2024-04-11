@@ -14,7 +14,8 @@
                 "https://addons.mozilla.org/firefox/downloads/latest/matte-black-v1/latest.xpi",
                 "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi",
                 "https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/latest.xpi",
-                "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi"
+                "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi",
+                "https://addons.mozilla.org/firefox/downloads/latest/cookie-autodelete/latest.xpi"
             ]
         },
         "3rdparty": {
