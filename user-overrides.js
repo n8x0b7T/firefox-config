@@ -11,6 +11,7 @@ user_pref("browser.urlbar.quicksuggest.enabled", false);
 user_pref("privacy.clearOnShutdown.history", false);
 user_pref("privacy.clearOnShutdown.downloads", false);
 user_pref("privacy.clearOnShutdown.cookies", false);
+user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
 
 // search from the URL bar, but no search suggestions
 user_pref("keyword.enabled", true);
