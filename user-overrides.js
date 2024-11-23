@@ -27,6 +27,7 @@ user_pref("browser.startup.page", 1);
 user_pref("browser.newtabpage.enabled", true);
 user_pref("browser.newtabpage.activity-stream.showSearch", false);
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
 
 // dark mode for built-in pdf reader
 user_pref("pdfjs.viewerCssTheme", 2);
