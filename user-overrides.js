@@ -34,6 +34,10 @@ user_pref("pdfjs.viewerCssTheme", 2);
 
 // disable letterboxing
 user_pref("privacy.resistFingerprinting.letterboxing", false);
+user_pref("privacy.resistFingerprinting", false);
+user_pref("privacy.fingerprintingProtection.overrides", "+AllTargets,-JSDateTimeUTC,-CSSPrefersColorScheme");
+
+// no webgl
 user_pref("webgl.disabled", true);
 
 // disable resist fingerprinting in favor of canvas blocker
