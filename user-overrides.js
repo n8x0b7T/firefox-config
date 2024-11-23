@@ -10,6 +10,7 @@ user_pref("browser.urlbar.quicksuggest.enabled", false);
 
 user_pref("privacy.clearOnShutdown.history", false);
 user_pref("privacy.clearOnShutdown.downloads", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
 
 // search from the URL bar, but no search suggestions
 user_pref("keyword.enabled", true);
@@ -32,6 +33,7 @@ user_pref("pdfjs.viewerCssTheme", 2);
 
 // disable letterboxing
 user_pref("privacy.resistFingerprinting.letterboxing", false);
+user_pref("webgl.disabled", true);
 
 // disable resist fingerprinting in favor of canvas blocker
 user_pref("privacy.resistFingerprinting", true);
