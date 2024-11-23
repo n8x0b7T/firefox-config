@@ -44,3 +44,5 @@ user_pref("webgl.disabled", true);
 // allow extensions to work on mozilla websites
 user_pref("extensions.webextensions.restrictedDomains", "");
 
+// dont sent x-origin referers
+user_pref("network.http.referer.XOriginPolicy", 2);
