@@ -32,16 +32,13 @@ user_pref("browser.newtabpage.activity-stream.showWeather", false);
 // dark mode for built-in pdf reader
 user_pref("pdfjs.viewerCssTheme", 2);
 
-// disable letterboxing
+// fingerprint config
 user_pref("privacy.resistFingerprinting.letterboxing", false);
 user_pref("privacy.resistFingerprinting", false);
 user_pref("privacy.fingerprintingProtection.overrides", "+AllTargets,-JSDateTimeUTC,-CSSPrefersColorScheme");
 
 // no webgl
 user_pref("webgl.disabled", true);
-
-// disable resist fingerprinting in favor of canvas blocker
-user_pref("privacy.resistFingerprinting", true);
 
 // allow extensions to work on mozilla websites
 user_pref("extensions.webextensions.restrictedDomains", "");
